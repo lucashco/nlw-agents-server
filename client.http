@@ -3,3 +3,14 @@
 
 # GET ROOMS
 GET {{baseUrl}}/rooms
+###
+
+# CREATE ROOM
+POST {{baseUrl}}/rooms
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Room name test",
+  "description": "room description test"
+}
