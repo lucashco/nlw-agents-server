@@ -8,6 +8,7 @@ import {
 import { env } from './env.ts';
 import { createRoomRoute } from './https/routes/create-room.ts';
 import { getRoomsRoute } from './https/routes/get-rooms.ts';
+import { getRoomQuestionsRoute } from './https/routes/get-rooms-questions.ts';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -21,5 +22,6 @@ app.setValidatorCompiler(validatorCompiler);
 
 app.register(getRoomsRoute);
 app.register(createRoomRoute);
+app.register(getRoomQuestionsRoute);
 
 app.listen({ port: env.PORT }).then();

@@ -14,3 +14,8 @@ Content-Type: application/json
   "name": "Room name test",
   "description": "room description test"
 }
+###
+
+# GET ROOM QUESTIONS
+GET {{baseUrl}}/rooms/0dbc2f98-4968-44be-4fdb-f399737e5e21/questions
+###
