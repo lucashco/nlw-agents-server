@@ -2,10 +2,12 @@
 @baseUrl = http://localhost:3333
 
 # GET ROOMS
+# @name getRooms
 GET {{baseUrl}}/rooms
 ###
 
 # CREATE ROOM
+# @name createRoom
 POST {{baseUrl}}/rooms
 Accept: application/json
 Content-Type: application/json
@@ -15,7 +17,10 @@ Content-Type: application/json
   "description": "room description test"
 }
 ###
+@roomId = {{getRooms.response.body.$[0].id}}
+###
 
 # GET ROOM QUESTIONS
-GET {{baseUrl}}/rooms/0dbc2f98-4968-44be-4fdb-f399737e5e21/questions
+# @name getRoomQuestions
+GET {{baseUrl}}/rooms/{{roomId}}/questions
 ###
