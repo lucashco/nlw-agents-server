@@ -23,10 +23,10 @@ export const uploadAudioRoute: FastifyPluginCallbackZod = (app) => {
       }
 
       const audioBuffer = await audio.toBuffer();
-      const autioAsBase64 = audioBuffer.toString('base64');
+      const audioAsBase64 = audioBuffer.toString('base64');
 
       const transcription = await transcribeAudio(
-        autioAsBase64,
+        audioAsBase64,
         audio.mimetype
       );
       const embeddings = await generatEmbeddings(transcription);
